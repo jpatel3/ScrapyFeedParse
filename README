@@ -1,1 +1,27 @@
 # This is a README Test for Jaimin Patel. 
+
+1. Create table using UrlsScript.rtf script
+
+2. Create table eventMap using below -
+
+  CREATE TABLE `eventmap` (
+    `event_id` int(11) NOT NULL,
+    `url_id` varchar(45) NOT NULL,
+    `title` varchar(500) NOT NULL,
+    `description` varchar(5000) NOT NULL,
+    `link` varchar(500) NOT NULL,
+    `other` varchar(200) DEFAULT NULL,
+    `created_date` datetime DEFAULT NULL,
+    `keyword` varchar(100) DEFAULT NULL,
+    `eventmapid` int(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY (`eventmapid`)
+  ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1$$
+
+3. Get the code, and run using below command -
+
+    scrapy crawl newsspider -o ./item.json -t JSON
+
+Note - Currently I am running the parser only on top 10 urls >
+spider.py > select url from MyDB.SourceUrls where deleted_ind is null limit 10
+
+If you want to run on all the table, change the query.
